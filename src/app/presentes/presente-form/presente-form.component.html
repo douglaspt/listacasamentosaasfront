@@ -1,0 +1,102 @@
+<h5>{{ title }}</h5>
+<div class="row">
+  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">card_giftcard</i>
+        <input id="descricao" type="text" class="validate"
+               [(ngModel)]="presente.descricao" formControlName="descricao"
+               [class.invalid]="form.controls['descricao'].touched && !form.controls['descricao'].valid"
+        >
+        <label for="descricao"
+               [class.active]="presente.descricao"
+               data-error="A Descrição é necessária e precisa conter pelo menos 10 caracteres">
+          Descrição
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">payment</i>
+        <input id="valor" type="number" class="validate"
+               [(ngModel)]="presente.valor" formControlName="valor"
+               [class.invalid]="form.controls['valor'].touched && !form.controls['valor'].valid"
+        >
+        <label for="valor"
+               [class.active]="presente.valor"
+               data-error="O Valor é necessário e precisa conter pelo menos 2 caracteres">
+          Valor
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">http</i>
+        <input id="linkWeb" type="text" class="validate"
+               [(ngModel)]="presente.linkWeb" formControlName="linkWeb"
+               [class.invalid]="form.controls['linkWeb'].touched && !form.controls['linkWeb'].valid"
+        >
+        <label for="linkWeb"
+               [class.active]="presente.linkWeb"
+               data-error="O Link de Web é necessário e precisa conter pelo menos 5 caracteres">
+          Link Web
+        </label>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="idUsuario" type="text" class="validate"
+               [(ngModel)]="presente.idUsuario" formControlName="idUsuario"
+               [class.invalid]="form.controls['idUsuario'].touched && !form.controls['idUsuario'].valid">
+        <label for="idUsuario"
+               [class.active]="presente.idUsuario"
+               data-error="O Id do Usuario é necessário e precisa conter pelo menos 5 caracteres">
+          Id Usuário
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">done</i>
+        <input id="jaGanhei" type="number" class="validate"
+               [(ngModel)]="presente.jaGanhei" formControlName="jaGanhei"
+               [class.invalid]="form.controls['jaGanhei'].touched && !form.controls['jaGanhei'].valid">
+        <label for="jaGanhei"
+               [class.active]="presente.jaGanhei"
+               data-error="O Já Ganhei é necessário e precisa conter pelo menos 5 caracteres">
+          Ganhei
+        </label>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">receipt</i>
+        <input id="dataGanhei" type="date" class="validate text-right"
+               [(ngModel)]="presente.dataGanhei" formControlName="dataGanhei">
+      
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="nomeComprador" type="text" class="validate"
+               [(ngModel)]="presente.nomeComprador" formControlName="nomeComprador"
+               [class.invalid]="form.controls['nomeComprador'].touched && !form.controls['nomeComprador'].valid"
+        >
+        <label for="nomeComprador"
+               [class.active]="presente.nomeComprador"
+               data-error="O Nome do Comprador é necessário e precisa conter pelo menos 10 caracteres">
+          Nome do Comprador
+        </label>
+      </div>
+    </div>
+
+    <button class="btn waves-effect waves-light" type="submit"
+            [disabled]="!form.valid">
+      Salvar<i class="material-icons right">send</i>
+    </button>
+  </form>
+</div>

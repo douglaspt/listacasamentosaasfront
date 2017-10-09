@@ -1,0 +1,67 @@
+<h5>{{ title }}</h5>
+<div class="row">
+  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="nomeNoivo" type="text" class="validate"
+               [(ngModel)]="user.nomeNoivo" formControlName="nomeNoivo"
+               [class.invalid]="form.controls['nomeNoivo'].touched && !form.controls['nomeNoivo'].valid"
+        >
+        <label for="nomeNoivo"
+               [class.active]="user.nomeNoivo"
+               data-error="O Nome do Noivo é necessário e precisa conter pelo menos 3 caracteres">
+          Nome do Noivo
+        </label>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="nomeNoiva" type="text" class="validate"
+               [(ngModel)]="user.nomeNoiva" formControlName="nomeNoiva"
+               [class.invalid]="form.controls['nomeNoiva'].touched && !form.controls['nomeNoiva'].valid"
+        >
+        <label for="nomeNoiva"
+               [class.active]="user.nomeNoiva"
+               data-error="O Nome da Noiva é necessário e precisa conter pelo menos 3 caracteres">
+          Nome da Noiva
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">email</i>
+        <input id="email" type="email" class="validate"
+               [(ngModel)]="user.email" formControlName="email"
+               [class.invalid]="form.controls['email'].touched && !form.controls['email'].valid">
+        <label for="email"
+               [class.active]="user.email"
+               data-error="Invalid Email">
+          Email
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="senha" type="text" class="validate"
+               [(ngModel)]="user.senha" formControlName="senha"
+               [class.invalid]="form.controls['senha'].touched && !form.controls['senha'].valid"
+        >
+        <label for="senha"
+               [class.active]="user.senha"
+               data-error="A senha é necessário e precisa conter pelo menos 3 caracteres">
+          Senha
+        </label>
+      </div>
+    </div>
+
+    <button class="btn waves-effect waves-light" type="submit"
+            [disabled]="!form.valid">
+      Salvar<i class="material-icons right">send</i>
+    </button>
+  </form>
+</div>
